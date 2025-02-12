@@ -29,8 +29,6 @@ declare -A DNS_SERVERS=(
     ["DE"]="154.83.83.90"
 )
 
-
-
 # 检查并处理 systemd-resolved
 if systemctl is-active systemd-resolved &>/dev/null; then
     echo "检测到 systemd-resolved 正在运行，正在停止服务..."
@@ -91,14 +89,14 @@ trap rollback_dns ERR SIGTERM
 
 # 显示可用的 DNS 选项
 echo "请选择 DNS 服务器位置："
-echo "1) Default 154.83.83.83"
+echo "1) 随机 154.83.83.83"
 echo "2) 香港 (HK) 154.83.83.84"
 echo "3) 日本 (JP) 154.83.83.85"
 echo "4) 台湾 (TW) 154.83.83.86"
-echo "5) 新加坡 (SG) 154.83.83.87"
-echo "6) 美国 (US) 154.83.83.88"
-echo "7) 英国 (UK) 154.83.83.89"
-echo "8) 德国 (DE) 154.83.83.90"
+echo "5) 美国 (US) 154.83.83.88"
+echo "6) 英国 (UK) 154.83.83.89"
+echo "7) 德国 (DE) 154.83.83.90"
+echo "8) 新加坡 (SG) 154.83.83.87"
 echo "9) 自定义 DNS"
 
 # 读取用户输入
